@@ -33,11 +33,16 @@ public class Main extends JFrame{
         fileMenu.add(saveMenu);
         fileMenu.add(loadMenu);
         JMenuItem exportToText = new JMenuItem("Export");
+        exportToText.setMnemonic('e');
         JMenuItem saveTo = new JMenuItem("Save");
         saveTo.setMnemonic('s');
-        // Dodac ikony
-        saveTo.setIcon((new ImageIcon("resources/images/save.png")));
+        // export
+        exportToText.setIcon((new ImageIcon("resources/images/export.png")));
+        exportToText.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, KeyEvent.ALT_MASK));
+        // save
+        saveTo.setIcon((new ImageIcon("resources/images/import.gif")));
         saveTo.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, KeyEvent.ALT_MASK));
+
         saveTo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,7 +64,16 @@ public class Main extends JFrame{
         saveMenu.add(saveTo);
 
         JMenuItem importFromText = new JMenuItem("Import");
+        importFromText.setMnemonic('i');
         JMenuItem loadFrom = new JMenuItem("Load");
+        loadFrom.setMnemonic('l');
+        //import
+        importFromText.setIcon((new ImageIcon("resources/images/export.png")));
+        importFromText.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I, KeyEvent.ALT_MASK));
+        //load
+        loadFrom.setIcon((new ImageIcon("resources/images/import.gif")));
+        loadFrom.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_L, KeyEvent.ALT_MASK));
+
         loadMenu.add(importFromText);
         loadMenu.add(loadFrom);
         menuBar.add(fileMenu);
